@@ -1,5 +1,8 @@
 # Number Formatter
 
+[![Build Status](https://travis-ci.org/Astr-o/bluemix-cf-ip-filter.svg?branch=master)](https://travis-ci.org/Astr-o/bluemix-cf-ip-filter)
+
+
 Express middleware for IP Based Filtering of incoming requests to Bluemix cloudfoundry apps which are proxied.
 
 Cloudfoundry on Bluemix does not support restricting allowed IPs in its configuration, you can easily
