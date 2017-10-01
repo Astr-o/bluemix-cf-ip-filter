@@ -1,3 +1,4 @@
+'use strict'
 const forwarded = require('forwarded')
 
 module.exports = function cfIpFilter(ipList, mode = 'allow') {
