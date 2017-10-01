@@ -19,6 +19,11 @@
     "devDependencies": {
         "chai": "^4.1.2",
         "express": "^4.16.1",
-        "mocha": "^3.5.3"
+        "http-proxy-middleware": "^0.17.4",
+        "mocha": "^3.5.3",
+        "mock-express-request": "^0.2.0",
+        "morgan": "^1.9.0",
+        "sinon": "^4.0.0",
+        "sinon-chai": "^2.14.0"
     }
 }
