@@ -1,0 +1,24 @@
+{
+    "name": "bluemix-cf-ip-filter",
+    "version": "0.1.0",
+    "description": "Express middleware for applying IP filtering",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha"
+    },
+    "keywords": [
+        "bluemix",
+        "cloudfoundry",
+        "express"
+    ],
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "proxy-addr": "^2.0.2"
+    },
+    "devDependencies": {
+        "chai": "^4.1.2",
+        "express": "^4.16.1",
+        "mocha": "^3.5.3"
+    }
+}
