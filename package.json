@@ -17,7 +17,15 @@
         "express-middleware",
         "middleware"
     ],
-    "author": "",
+    "author": {
+        "name": "Kroum Klutchkov",
+        "email": "kroum.klutchkov@gmail.com",
+        "url": "https://github.com/Astr-o/bluemix-cf-ip-filter"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Astr-o/bluemix-cf-ip-filter.git"
+    },
     "license": "MIT",
     "dependencies": {
         "forwarded": "^0.1.2"
