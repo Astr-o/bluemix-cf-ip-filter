@@ -1,6 +1,8 @@
 # Number Formatter
 
 [![Build Status](https://travis-ci.org/Astr-o/bluemix-cf-ip-filter.svg?branch=master)](https://travis-ci.org/Astr-o/bluemix-cf-ip-filter)
+[![Coverage Status](https://coveralls.io/repos/github/Astr-o/bluemix-cf-ip-filter/badge.svg?branch=master)](https://coveralls.io/github/Astr-o/bluemix-cf-ip-filter?branch=master)
+
 
 
 Express middleware for IP Based Filtering of incoming requests to Bluemix cloudfoundry apps which are proxied.
