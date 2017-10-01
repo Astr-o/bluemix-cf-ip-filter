@@ -11,7 +11,7 @@ this functionality to your existing express application using this module.
 ## Installation
 
 ```bash
-npm install bluemix-cf-ip-filter`
+npm install bluemix-cf-ip-filter
 ```
 
 ## Usage
