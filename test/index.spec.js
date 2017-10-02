@@ -5,24 +5,12 @@ const sinonChai = require('sinon-chai')
 chai.use(sinonChai)
 chai.should();
 
-const MockReq = require('mock-express-request')
-const MockRes = require('./helpers/mock-res')
+
+const helpers = require('./helpers')
 
 // this module
 const ipFilter = require('../')
 
-function mockProxiedReqFromIP(originIP) {
-    return new MockReq({
-        // mock proxy address headers
-        headers: {
-            'X-Forwarded-For': `${originIP}`
-        },
-
-        connection: {
-            remoteAddress: '1.1.1.1'
-        }
-    })
-}
 
 describe('bluemix-cf-ip-filter', () => {
 
@@ -35,7 +23,7 @@ describe('bluemix-cf-ip-filter', () => {
 
         it('Should allow listed IPs', () => {
 
-            const testReqs = listedIPs.map(mockProxiedReqFromIP)
+            const testReqs = listedIPs.map(helpers.mockProxiedReqFromIP)
 
             testReqs.forEach((req) => {
                 const nextSpy = sinon.spy()
@@ -49,10 +37,10 @@ describe('bluemix-cf-ip-filter', () => {
 
         it('Should not allow un-listed IPs', () => {
 
-            const testReqs = unlistedIPs.map(mockProxiedReqFromIP)
+            const testReqs = unlistedIPs.map(helpers.mockProxiedReqFromIP)
 
             testReqs.forEach((req) => {
-                const res = new MockRes()
+                const res = helpers.mockRes()
                 const nextSpy = sinon.spy()
 
                 middleware(req, res, nextSpy)
@@ -76,10 +64,10 @@ describe('bluemix-cf-ip-filter', () => {
         const middleware = ipFilter(listedIPs, 'block')
 
         it('Should not allow listed IPs', () => {
-            const testReqs = listedIPs.map(mockProxiedReqFromIP)
+            const testReqs = listedIPs.map(helpers.mockProxiedReqFromIP)
 
             testReqs.forEach((req) => {
-                const res = new MockRes()
+                const res = helpers.mockRes()
                 const nextSpy = sinon.spy()
 
                 middleware(req, res, nextSpy)
@@ -94,7 +82,7 @@ describe('bluemix-cf-ip-filter', () => {
 
         it('Should allow un-listed IPs', () => {
 
-            const testReqs = unlistedIPs.map(mockProxiedReqFromIP)
+            const testReqs = unlistedIPs.map(helpers.mockProxiedReqFromIP)
 
             testReqs.forEach((req) => {
                 const nextSpy = sinon.spy()
