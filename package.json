@@ -1,6 +1,6 @@
 {
     "name": "bluemix-cf-ip-filter",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "description": "Express middleware for applying IP filtering",
     "main": "index.js",
     "engines": {
