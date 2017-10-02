@@ -8,7 +8,7 @@
 Express middleware for IP Based Filtering of incoming requests to Bluemix cloudfoundry apps which are proxied.
 
 Cloudfoundry on Bluemix does not support restricting allowed IPs in its configuration, you can easily
-this functionality to your existing express application using this module.
+add this functionality to your existing express application using this module.
 
 ## Installation
 
@@ -21,6 +21,7 @@ npm install bluemix-cf-ip-filter
 ### Allowed Mode (Default)
 
 middleware will allow requests originating from listed address and respond with standard 403 response
+any others.
 
 ```Javascript
 const ipFilter = require('bluemix-cf-ip-filter')
@@ -36,7 +37,8 @@ if(process.env.NODE_ENV === 'production') {
 
 ### Banned mode
 
-middleware will allow requests originating from listed address and respond with standard 403 response
+middleware will block requests originating from listed address with a 403 response 
+and allow unlisted IPs.
 
 ```Javascript
 if(process.env.NODE_ENV === 'production') {
